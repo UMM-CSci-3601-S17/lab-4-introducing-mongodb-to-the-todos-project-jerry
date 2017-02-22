@@ -1,5 +1,5 @@
 ## UMM CSci 3601 Lab 4: Mongo, Spark, etc.
-[![Build Status](https://travis-ci.org/UMM-CSci-3601/3601-lab4_mongo.svg?branch=master)](https://travis-ci.org/UMM-CSci-3601/3601-lab4_mongo)
+[![Build Status](https://travis-ci.org/UMM-CSci-3601/3601-lab4_mongo.svg?branch=master)](https://travis-ci.org/UMM-CSci-3601/3601-lab4_mongodb-to-the-todos-project-jerry)
 
 In this lab, you'll be working to re-implement the ToDO API, this time pulling
 data from a Mongo Database rather than a flat JSON file. You will also be implementing
