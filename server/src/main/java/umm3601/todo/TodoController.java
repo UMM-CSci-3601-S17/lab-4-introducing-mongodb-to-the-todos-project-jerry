@@ -42,9 +42,9 @@ public class TodoController {
     public String listTodos(Map<String, String[]> queryParams) {
         Document filterDoc = new Document();
 
-        if (queryParams.containsKey("age")) {
-            int targetAge = Integer.parseInt(queryParams.get("age")[0]);
-            filterDoc = filterDoc.append("age", targetAge);
+        if (queryParams.containsKey("status")) {
+            int targetStatus = Integer.parseInt(queryParams.get("status")[0]);
+            filterDoc = filterDoc.append("status", targetStatus);
         }
 
         FindIterable<Document> matchingTodos = todoCollection.find(filterDoc);
@@ -63,19 +63,6 @@ public class TodoController {
         Document todo = iterator.next();
 
         return todo.toJson();
-    }
-
-    // Get the average age of all todos by company
-    public String getAverageAgeByCompany() {
-        AggregateIterable<Document> documents
-                = todoCollection.aggregate(
-                Arrays.asList(
-                        Aggregates.group("$company",
-                                Accumulators.avg("averageAge", "$age")),
-                        Aggregates.sort(Sorts.ascending("_id"))
-                ));
-        System.err.println(JSON.serialize(documents));
-        return JSON.serialize(documents);
     }
 
 }
