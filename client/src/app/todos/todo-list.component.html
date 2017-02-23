@@ -1,0 +1,37 @@
+<ul class="list-group">
+    <li class="list-group-item list-group-item-info">
+        <input #input type="text" placeholder="ID" (input)="searchByID = $event.target.value">
+        <input #input type="text" placeholder="Owner" (input)="searchByOwner = $event.target.value">
+        <input #input type="text" placeholder="Body" (input)="searchByBody = $event.target.value">
+        <input #input type="text" placeholder="Category" (input)="searchByCategory = $event.target.value">
+        <select #input (input)="searchByStatus = $event.target.value">
+            <option value=""> </option>
+            <option value=1>True</option>
+            <option value=0>False</option>
+        </select>
+    </li>
+
+    <li class="list-group-item list-group-item-info">Todo List</li>
+</ul>
+
+<!--head of todo list-->
+<table class="list-group-item">
+    <tr>
+        <th class="id-head">ID</th>
+        <th class="owner-head">Owner</th>
+        <th class="body-head">Body</th>
+        <th class="category-head">Category</th>
+        <th class="status-head">Status</th>
+    </tr>
+</table>
+
+<!--content of todo list-->
+<table *ngFor="let todo of todos | filterBy: {_id: searchByID} | filterBy: {owner: searchByOwner} | filterBy: {body: searchByBody} | filterBy: {category: searchByCategory} | filterBy: {status: searchByStatus}" class="list-group-item">
+    <tr>
+        <td class="id-column border"> {{ todo.id }} </td>
+        <td class="owner-column border"> {{ todo.owner }} </td>
+        <td class="body-column border"> {{ todo.body }} </td>
+        <td class="category-column border"> {{ todo.category }} </td>
+        <td class="status-column border"> {{ todo.status }} </td>
+    </tr>
+</table>
