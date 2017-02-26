@@ -63,12 +63,6 @@ public class Server {
             return todoController.listTodos(req.queryMap().toMap());
         });
 
-        // See specific todo
-        get("api/todos/:id", (req, res) -> {
-            res.type("application/json");
-            String id = req.params("id");
-            return todoController.getTodo(id);
-        });
 
 
         // Handle "404" file not found requests:

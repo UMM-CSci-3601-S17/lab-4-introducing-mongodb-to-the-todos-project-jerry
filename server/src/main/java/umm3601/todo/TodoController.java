@@ -51,18 +51,6 @@ public class TodoController {
 
         return JSON.serialize(matchingTodos);
     }
-
-    // Get a single todo
-    public String getTodo(String id) {
-        FindIterable<Document> jsonTodos
-                = todoCollection
-                .find(eq("_id", new ObjectId(id)));
-
-        Iterator<Document> iterator = jsonTodos.iterator();
-
-        Document todo = iterator.next();
-
-        return todo.toJson();
-    }
+    
 
 }
