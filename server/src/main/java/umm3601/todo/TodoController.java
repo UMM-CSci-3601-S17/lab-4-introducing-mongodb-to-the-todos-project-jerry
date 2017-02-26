@@ -51,6 +51,13 @@ public class TodoController {
 
         return JSON.serialize(matchingTodos);
     }
-    
+
+    // Provide summary information of todos
+//    public String getSummaryTodos(Map<String, String[]> queryParams) {
+//        Document docs = new Document();
+//
+//        return JSON.serialize(matchingTodos);
+//    }
+
 
 }
