@@ -28,10 +28,65 @@
 <!--content of todo list-->
 <table *ngFor="let todo of todos | filterBy: {_id: searchByID} | filterBy: {owner: searchByOwner} | filterBy: {body: searchByBody} | filterBy: {category: searchByCategory} | filterBy: {status: searchByStatus}" class="list-group-item">
     <tr>
-        <td class="id-column border"> {{ todo.id }} </td>
+        <td class="id-column border"> {{ todo._id }} </td>
         <td class="owner-column border"> {{ todo.owner }} </td>
         <td class="body-column border"> {{ todo.body }} </td>
         <td class="category-column border"> {{ todo.category }} </td>
         <td class="status-column border"> {{ todo.status }} </td>
     </tr>
 </table>
+
+<style>
+    /*table setting*/
+    table td th{
+        border: 1px solid black;
+    }
+    .border {
+        border-collapse: separate;
+    }
+
+    /*list setting*/
+    .id-column {
+        width: 20%;
+        text-align: center;
+    }
+    .owner-column {
+        width: 10%;
+        text-align: center;
+    }
+    .body-column {
+        width: 35%;
+        text-align: left;
+        padding: 5px;
+    }
+    .category-column {
+        width: 15%;
+        text-align: center;
+    }
+    .status-column {
+        width: 10%;
+        text-align: center;
+    }
+
+    /*title setting*/
+    .id-head {
+        width: 280px;
+        text-align: center;
+    }
+    .owner-head {
+        width: 100px;
+        text-align: center;
+    }
+    .body-head {
+        width: 460px;
+        text-align: center;
+    }
+    .category-head {
+        width: 210px;
+        text-align: center;
+    }
+    .status-head {
+        width: 120px;
+        text-align: center;
+    }
+</style>
