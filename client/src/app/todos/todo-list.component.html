@@ -6,7 +6,9 @@
         <input #input type="text" placeholder="Category" (input)="searchByCategory = $event.target.value">
         <select #input (input)="searchByStatus = $event.target.value">
             <option value="">Status</option>
-            <option value=1>True</option>
+            <option value=1>
+                <span class="glyphicons glyphicons-tick"></span> True
+            </option>
             <option value=0>False</option>
         </select>
     </li>
@@ -14,17 +16,22 @@
     <li class="list-group-item list-group-item-info">Todo List</li>
 </ul>
 
-
-
 <!--head of todo list-->
 <table class="list-group-item">
     <tr>
         <h3>
-            <th class="id-head"><span class="label label-primary">ID</span></th>
-            <th class="owner-head"><span class="label label-primary">Owner</span></th>
-            <th class="body-head"><span class="label label-primary">Body</span></th>
-            <th class="category-head"><span class="label label-primary">Category</span></th>
-            <th class="status-head"><span class="label label-primary">Status</span></th>
+            <th class="id-head">
+                <span class="label label-primary">ID</span>
+            </th>
+            <th class="owner-head">
+                <span class="label label-primary">Owner</span></th>
+            <th class="body-head">
+                <span class="label label-primary">Body</span>
+            </th>
+            <th class="category-head">
+                <span class="label label-primary">Category</span></th>
+            <th class="status-head"><span class="label label-primary">Status</span>
+            </th>
         </h3>
     </tr>
 </table>
